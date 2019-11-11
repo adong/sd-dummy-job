@@ -1,0 +1,8 @@
+shared:
+    image: node:8
+
+jobs:
+    main:
+        requires: [~pr, ~commit]
+        steps:
+            - step1: echo ok
