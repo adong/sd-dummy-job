@@ -8,6 +8,7 @@ jobs:
             - step1: echo ok
     mainFreeze:
         requires: [main]
-        freezeWindows: [ "* 9-17 ? * 1-5" ]
+        # freezeWindows: [ "* 9-17 ? * 1-5" ]
+        freezeWindows: [ "* * ? * *" ]
         steps:
             - step1: echo ok
