@@ -13,7 +13,7 @@ jobs:
         requires: [main]
         # freezeWindows: [ "* 9-17 ? * 1-5" ]
         # freezeWindows: [ "* * ? * *" ]
-        freezeWindows: ['* * ? 11 *']
+        freezeWindows: ['* * ? 12 *']
         steps:
             - step1: echo ok
             - step2: echo $(meta get parameters.p1)
