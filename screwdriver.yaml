@@ -1,19 +1,49 @@
-shared:
-    image: node:8
+# shared:
+#     image: node:8
 
-parameters:
-  p1: p1
+# parameters:
+#   p1: p1
+
+# jobs:
+#     main:
+#         requires: [~pr, ~commit]
+#         steps:
+#             - step1: echo ok
+#     mainFreeze:
+#         requires: [main]
+#         # freezeWindows: [ "* 9-17 ? * 1-5" ]
+#         # freezeWindows: [ "* * ? * *" ]
+#         freezeWindows: ['* * ? 12 *']
+#         steps:
+#             - step1: echo ok
+#             - step2: echo $(meta get parameters.p1)
+
+shared:
+    image: node:12
 
 jobs:
-    main:
-        requires: [~pr, ~commit]
-        steps:
-            - step1: echo ok
-    mainFreeze:
-        requires: [main]
-        # freezeWindows: [ "* 9-17 ? * 1-5" ]
-        # freezeWindows: [ "* * ? * *" ]
-        freezeWindows: ['* * ? 12 *']
-        steps:
-            - step1: echo ok
-            - step2: echo $(meta get parameters.p1)
+  main:
+    requires: [~pr, ~commit]
+    steps:
+      - ok: echo ok
+  batmain:
+    requires: [main]
+    steps:
+      - ok: echo ok
+  robin:
+    requires: [batmain]
+    steps:
+      - ok: echo ok
+  deploy:
+    requires: [~pr, ~commit]
+    steps:
+      - ok: echo ok
+  foo01job:
+    requires: [main]
+    steps:
+      - ok: echo ok
+
+  foo1job:
+    requires: [main]
+    steps:
+      - ok: echo ok
