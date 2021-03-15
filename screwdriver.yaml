@@ -51,10 +51,10 @@ jobs:
     steps:
       - ok: echo ok
   H:
-    requires: [A, C]
+    requires: [A]
     steps:
       - ok: echo ok
   I:
-    requires: [A]
+    requires: [A, H]
     steps:
       - ok: echo ok
