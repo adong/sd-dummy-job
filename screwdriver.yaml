@@ -27,7 +27,7 @@ jobs:
     steps:
       - ok: echo ok
   B:
-    requires: [A]
+    requires: [~pr, ~commit]
     steps:
       - ok: echo ok
   C:
@@ -35,11 +35,11 @@ jobs:
     steps:
       - ok: echo ok
   D:
-    requires: [A]
+    requires: [C]
     steps:
       - ok: echo ok
   E:
-    requires: [A]
+    requires: [D]
     steps:
       - ok: echo ok
   F:
