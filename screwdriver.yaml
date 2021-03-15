@@ -54,3 +54,7 @@ jobs:
     requires: [A]
     steps:
       - ok: echo ok
+  I:
+    requires: [A]
+    steps:
+      - ok: echo ok
