@@ -26,4 +26,7 @@ jobs:
     requires: [~pr, ~commit]
     steps:
       - ok: echo ok
-
+  B:
+    requires: [A]
+    steps:
+      - ok: echo ok
