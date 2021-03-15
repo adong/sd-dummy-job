@@ -30,3 +30,7 @@ jobs:
     requires: [A]
     steps:
       - ok: echo ok
+  C:
+    requires: [A]
+    steps:
+      - ok: echo ok
