@@ -26,24 +26,23 @@ jobs:
     requires: [~pr, ~commit]
     steps:
       - ok: echo ok
-  batmain:
+  A:
     requires: [main]
     steps:
       - ok: echo ok
-  robin:
-    requires: [batmain]
+  B:
+    requires: [A]
     steps:
       - ok: echo ok
-  deploy:
+  C:
     requires: [~pr, ~commit]
     steps:
       - ok: echo ok
-  foo01job:
+  D:
     requires: [main]
     steps:
       - ok: echo ok
-
-  foo1job:
+  E:
     requires: [main]
     steps:
       - ok: echo ok
