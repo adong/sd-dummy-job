@@ -26,23 +26,4 @@ jobs:
     requires: [~pr, ~commit]
     steps:
       - ok: echo ok
-  C:
-    requires: [A]
-    steps:
-      - ok: echo ok
-  B:
-    requires: [A]
-    steps:
-      - ok: echo ok
-  F:
-    requires: [~pr, ~commit]
-    steps:
-      - ok: echo ok
-  D:
-    requires: [A]
-    steps:
-      - ok: echo ok
-  E:
-    requires: [A]
-    steps:
-      - ok: echo ok
+
