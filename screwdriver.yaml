@@ -22,27 +22,27 @@ shared:
     image: node:12
 
 jobs:
-  main:
+  A:
     requires: [~pr, ~commit]
     steps:
       - ok: echo ok
-  A:
-    requires: [main]
+  C:
+    requires: [A]
     steps:
       - ok: echo ok
   B:
     requires: [A]
     steps:
       - ok: echo ok
-  C:
+  F:
     requires: [~pr, ~commit]
     steps:
       - ok: echo ok
   D:
-    requires: [main]
+    requires: [A]
     steps:
       - ok: echo ok
   E:
-    requires: [main]
+    requires: [A]
     steps:
       - ok: echo ok
